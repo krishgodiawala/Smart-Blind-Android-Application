@@ -3,13 +3,13 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="PervasiveCourse">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="PervasiveCourse_student">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../../../Applications/eclipse/"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Applications/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-    <path id="PervasiveCourse.classpath">
+    <path id="PervasiveCourse_student.classpath">
         <pathelement location="bin"/>
         <pathelement location="libs/jFuzzyLogic.jar"/>
         <pathelement location="libs/pi4j-core.jar"/>
@@ -17,6 +17,13 @@
         <pathelement location="libs/pi4j-example.jar"/>
         <pathelement location="libs/pi4j-gpio-extension.jar"/>
         <pathelement location="libs/pi4j-service.jar"/>
+        <pathelement location="libs/json-smart-1.2.jar"/>
+        <pathelement location="libs/jsonrpc2-base-1.35-javadoc.jar"/>
+        <pathelement location="libs/jsonrpc2-base-1.35.jar"/>
+        <pathelement location="libs/jsonrpc2-client-1.14.4-javadoc.jar"/>
+        <pathelement location="libs/jsonrpc2-client-1.14.4.jar"/>
+        <pathelement location="libs/jsonrpc2-server-1.10.1-javadoc.jar"/>
+        <pathelement location="libs/jsonrpc2-server-1.10.1.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -37,7 +44,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="PervasiveCourse.classpath"/>
+            <classpath refid="PervasiveCourse_student.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -53,40 +60,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="FuzzyLogicController">
-        <java classname="edu.rit.csci759.fuzzylogic.FuzzyLogicController" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
-    </target>
-    <target name="RpiSensorViaMCP3008">
-        <java classname="edu.rit.csci759.rspi.RpiSensorViaMCP3008" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
-    </target>
-    <target name="RpiPWM3ColorLED">
-        <java classname="edu.rit.csci759.rspi.RpiPWM3ColorLED" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
-    </target>
-    <target name="RpiPWMLedTest">
-        <java classname="edu.rit.csci759.rspi.RpiPWMLedTest" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
-    </target>
-    <target name="Rpi3ColorLED">
-        <java classname="edu.rit.csci759.rspi.Rpi3ColorLED" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
-    </target>
-    <target name="RpiBlinkLED">
-        <java classname="edu.rit.csci759.rspi.RpiBlinkLED" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
-    </target>
-    <target name="MyTipperClass">
-        <java classname="edu.rit.csci759.fuzzylogic.MyTipperClass" failonerror="true" fork="yes">
-            <classpath refid="PervasiveCourse.classpath"/>
-        </java>
     </target>
 </project>
