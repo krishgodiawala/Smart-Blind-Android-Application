@@ -61,4 +61,19 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="JsonRPCServer (1)">
+        <java classname="edu.rit.csci759.jsonrpc.server.JsonRPCServer" failonerror="true" fork="yes">
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </java>
+    </target>
+    <target name="JsonRPCClient (1)">
+        <java classname="edu.rit.csci759.jsonrpc.client.JsonRPCClient" failonerror="true" fork="yes">
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </java>
+    </target>
+    <target name="MyTipperClass (1)">
+        <java classname="edu.rit.csci759.fuzzylogic.MyTipperClass" failonerror="true" fork="yes">
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </java>
+    </target>
 </project>
