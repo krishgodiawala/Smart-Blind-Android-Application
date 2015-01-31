@@ -26,7 +26,7 @@ public class JsonRPCClient {
 		URL serverURL = null;
 
 		try {
-			serverURL = new URL("http://127.0.0.1:8080");
+			serverURL = new URL("http://192.168.0.13:8080");
 
 		} catch (MalformedURLException e) {
 		// handle exception...
