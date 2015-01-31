@@ -2,23 +2,18 @@ package edu.rit.csci759.jsonrpc.server;
 
 //The JSON-RPC 2.0 Base classes that define the 
 //JSON-RPC 2.0 protocol messages
-import com.thetransactioncompany.jsonrpc2.*;
-import com.thetransactioncompany.jsonrpc2.client.JSONRPC2Session;
-//The JSON-RPC 2.0 server framework package
-import com.thetransactioncompany.jsonrpc2.server.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.text.*;
-import java.util.*;
 
-import net.minidev.json.JSONObject;
+import com.thetransactioncompany.jsonrpc2.JSONRPC2ParseException;
+import com.thetransactioncompany.jsonrpc2.JSONRPC2Request;
+import com.thetransactioncompany.jsonrpc2.JSONRPC2Response;
+//The JSON-RPC 2.0 server framework package
+import com.thetransactioncompany.jsonrpc2.server.Dispatcher;
 
 
 
@@ -36,7 +31,6 @@ public class JsonRPCServer {
 	 * and broadcasting its messages.
 	 */
 	private static class Handler extends Thread {
-		private String name;
 		private Socket socket;
 		private BufferedReader in;
 		private PrintWriter out;

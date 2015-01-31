@@ -1,15 +1,14 @@
 package edu.rit.csci759.rspi;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 
 import edu.rit.csci759.rspi.utils.SoftPWMPin;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 
 public class RpiPWM3ColorLED

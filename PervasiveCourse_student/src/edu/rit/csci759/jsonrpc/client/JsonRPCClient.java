@@ -1,16 +1,16 @@
 package edu.rit.csci759.jsonrpc.client;
 
 //The Client sessions package
-import com.thetransactioncompany.jsonrpc2.client.*;
+import java.net.MalformedURLException;
+//For creating URLs
+import java.net.URL;
 
 //The Base package for representing JSON-RPC 2.0 messages
-import com.thetransactioncompany.jsonrpc2.*;
-
+import com.thetransactioncompany.jsonrpc2.JSONRPC2Request;
+import com.thetransactioncompany.jsonrpc2.JSONRPC2Response;
+import com.thetransactioncompany.jsonrpc2.client.JSONRPC2Session;
+import com.thetransactioncompany.jsonrpc2.client.JSONRPC2SessionException;
 //The JSON Smart package for JSON encoding/decoding (optional)
-import net.minidev.json.*;
-
-//For creating URLs
-import java.net.*;
 
 
 
