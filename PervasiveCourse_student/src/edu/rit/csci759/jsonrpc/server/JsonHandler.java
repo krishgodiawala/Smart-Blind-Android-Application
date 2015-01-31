@@ -77,7 +77,7 @@ public class JsonHandler {
 		
 			String hostname="unknown";
 			try {
-				InetAddress.getLocalHost().getHostName();
+				hostname=InetAddress.getLocalHost().getHostName();
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
 			}
