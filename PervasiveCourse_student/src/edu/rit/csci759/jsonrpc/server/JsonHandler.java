@@ -10,6 +10,8 @@ package edu.rit.csci759.jsonrpc.server;
 * @version 2011-03-05
 */ 
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -73,22 +75,28 @@ public class JsonHandler {
 		// Processes the requests
 		public JSONRPC2Response process(JSONRPC2Request req, MessageContext ctx) {
 		
+			String hostname="unknown";
+			try {
+				InetAddress.getLocalHost().getHostName();
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			}
 		    if (req.getMethod().equals("getDate")) {
 		    
 		        DateFormat df = DateFormat.getDateInstance();
 			
 			String date = df.format(new Date());
 			
-			return new JSONRPC2Response(date, req.getID());
+			return new JSONRPC2Response(hostname+" "+date, req.getID());
 
 	         }
 	         else if (req.getMethod().equals("getTime")) {
-		    
+	        	
 		        DateFormat df = DateFormat.getTimeInstance();
 			
 			String time = df.format(new Date());
 			
-			return new JSONRPC2Response(time, req.getID());
+			return new JSONRPC2Response(hostname+" "+time, req.getID());
 	         }
 		    else {
 		    
