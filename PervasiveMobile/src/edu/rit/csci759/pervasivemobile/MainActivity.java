@@ -1,7 +1,7 @@
 package edu.rit.csci759.pervasivemobile;
 
 import edu.rit.csci759.pervasivemobile.logic.JSONHandler;
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	Button btn_send_request;
 	static EditText et_server_url;
 	static EditText et_requst_method;
