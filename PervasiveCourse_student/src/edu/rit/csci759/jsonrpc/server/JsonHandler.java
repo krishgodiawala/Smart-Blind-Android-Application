@@ -47,8 +47,7 @@ public class JsonHandler {
 		         Object input = params.get(0);
 		 
 		         return new JSONRPC2Response(input, req.getID());
-	         }
-	         else {
+	         } else {
 		
 	             // Method name not supported
 					

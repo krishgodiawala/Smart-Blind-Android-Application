@@ -22,7 +22,7 @@ public class JsonRPCServer {
 	 * The port that the server listens on.
 	 */
 	private static final int PORT = 8080;
-	private static int reqCount=0;
+	//private static int reqCount=0;
 
 
 	/**
@@ -35,7 +35,7 @@ public class JsonRPCServer {
 		private BufferedReader in;
 		private PrintWriter out;
 		private Dispatcher dispatcher;
-		private int local_count;
+		//private int local_count;
 
 		/**
 		 * Constructs a handler thread, squirreling away the socket.
@@ -96,9 +96,7 @@ public class JsonRPCServer {
 				
 				System.out.println(body.toString());
 				JSONRPC2Request request = JSONRPC2Request.parse(body.toString());
-				local_count = reqCount++;
 				JSONRPC2Response resp = dispatcher.process(request, null);
-				resp.setID(local_count);
 				
 				
 				// send response
