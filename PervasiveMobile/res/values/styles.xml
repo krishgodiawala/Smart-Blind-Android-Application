@@ -1,20 +1,63 @@
 <resources>
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <style name="Theme.Bfb" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_bfb</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Bfb</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Bfb</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Bfb</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Bfb</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Bfb</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_bfb</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_bfb</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Bfb</item>
+        
+                <!-- Light.DarkActionBar specific -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.Bfb.Widget</item>
+
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="ActionBar.Solid.Bfb" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_background_textured_bfb</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_bfb</item>
+        <item name="android:backgroundSplit">@drawable/ab_background_textured_bfb</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Bfb</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Bfb" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_bfb</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Bfb</item>
+    </style>
+
+    <style name="PopupMenu.Bfb" parent="@android:style/Widget.Holo.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_bfb</item>	
+    </style>
+
+    <style name="DropDownListView.Bfb" parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_bfb</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Bfb" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_bfb</item>
+    </style>
+
+    <style name="DropDownNav.Bfb" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_bfb</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_bfb</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_bfb</item>
+    </style>
+    
+    <style name="ProgressBar.Bfb" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_bfb</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Bfb" parent="@android:style/Widget.Holo.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_bfb</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Bfb.Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Bfb</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Bfb</item>
     </style>
 
 </resources>

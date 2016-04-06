@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rsync -avzh * pi@pippi.cs.rit.edu:~/ritcoursematerials/PervasiveCourse/
+rsync -avzh * pi@10.10.10.103:~/ritcoursematerials_student/PervasiveCourse_student

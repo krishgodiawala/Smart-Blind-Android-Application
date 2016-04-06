@@ -4,6 +4,10 @@ package edu.rit.csci759.jsonrpc.client;
 import java.net.MalformedURLException;
 //For creating URLs
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 //The Base package for representing JSON-RPC 2.0 messages
 import com.thetransactioncompany.jsonrpc2.JSONRPC2Request;
@@ -17,7 +21,7 @@ import com.thetransactioncompany.jsonrpc2.client.JSONRPC2SessionException;
 public class JsonRPCClient {
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws JSONRPC2SessionException, InterruptedException {
 
 
 		// Creating a new session to a JSON-RPC 2.0 web service at a specified URL
@@ -26,7 +30,7 @@ public class JsonRPCClient {
 		URL serverURL = null;
 
 		try {
-			serverURL = new URL("http://192.168.0.13:8080");
+			serverURL = new URL("http://10.10.10.103:8080");
 
 		} catch (MalformedURLException e) {
 		// handle exception...
@@ -41,27 +45,58 @@ public class JsonRPCClient {
 
 		// Sending an example "getTime" request:
 		// Construct new request
+		//Modified by Vishwas Tantry
 		String method = "getTime";
-		int requestID = 0;
-		JSONRPC2Request request = new JSONRPC2Request(method, requestID);
-
+		String method1="getTemp";
+		String method2="getLight";
+		
+		
+		//method to add rule
+		String method3="addRule";
+		Map <String,Object> input=new HashMap<String,Object>();
+		input.put("temperature", "hot");
+		input.put("condition", "AND");
+		input.put("ambient","dim");
+		input.put("blind", "open");
+		
+		
+		
+		//method to delete rule
+		String method4="deleteRule";	
+		Map <String,Object> input1=new HashMap<String,Object>();
+		input1.put("name", "2");
+		
+		
+			int requestID = 0;
+		JSONRPC2Request request=null;
 		// Send request
 		JSONRPC2Response response = null;
+		
+		
+			
+			
+		//request = new JSONRPC2Request("getRules", requestID);
+		//request=new JSONRPC2Request(method3,input,requestID);
+		request=new JSONRPC2Request(method4,input1,requestID);
+		
+		response = mySession.send(request);	
+	
 
-		try {
-			response = mySession.send(request);
-
-		} catch (JSONRPC2SessionException e) {
-
-		System.err.println(e.getMessage());
-		// handle exception...
-		}
 
 		// Print response result / error
+		
+		
 		if (response.indicatesSuccess())
 			System.out.println(response.getResult());
 		else
 			System.out.println(response.getError().getMessage());
 	
-	}
+		
+		}
+
+
+
+		
+	
+	
 }

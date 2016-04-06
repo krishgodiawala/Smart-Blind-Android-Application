@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.rit.csci759.pervasivemobile.Other_activity"
+     android:background="@color/grey">
+         
+    <Button
+         style="?android:attr/actionButtonStyle"
+        android:background="@drawable/roundcorners"
+        android:id="@+id/btn_sendRequest"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20pt"
+        android:text="@string/ui_btn_sendRequest" />
+    <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+
+    <Button
+         style="?android:attr/actionButtonStyle"
+        android:background="@drawable/roundcorners"
+        android:id="@+id/btn_createRule"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Create New Rule" 
+              />
+     <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+        <Button
+             style="?android:attr/actionButtonStyle"
+        android:background="@drawable/roundcorners"
+            android:id="@+id/btn_updateRule"
+           android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:text="Update Rule" />
+     <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+    <Button
+         style="?android:attr/actionButtonStyle"
+        android:background="@drawable/roundcorners"
+        android:id="@+id/btn_deleteRule"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Delete Rule" />
+ <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+    <Button
+         style="?android:attr/actionButtonStyle"
+        android:background="@drawable/roundcorners"
+        android:id="@+id/btn_getRules"
+       android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Get Rules" />
+
+</LinearLayout>

@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PervasiveMobile</string>
+    <string name="app_name">Smart Blind</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="ui_label_serverURL">Server URL</string>
     <string name="ui_et_serverURL_default">127.0.0.1:8080</string>
     <string name="ui_label_requestMethod">JSON request method:</string>
-    <string name="ui_et_requestMethod_default">getTime</string>
+    <string name="ui_et_requestMethod_default">Temp</string>
     <string name="ui_label_response_default">Server current time</string>
-    <string name="ui_btn_sendRequest">Send Request</string>
+    <string name="ui_btn_sendRequest">History</string>
+    <string name="title_activity_my_activity">My_activity</string>
+    <string name="title_activity_get_rule">GetRuleActivity</string>
+    <string name="title_activity_get_rules">GetRulesActivity</string>
+    <string name="title_activity_delete_rule">DeleteRuleActivity</string>
+    <string name="title_activity_delete_rules">DeleteRules</string>
+    <string name="title_activity_create_rule_activity">Create_rule_activity</string>
+    <color name="grey">#BDBDBD</color>
+
+    <string-array name="temperature">
+        <item>hot</item>
+        <item>freezing</item>
+        <item>warm</item>
+        <item>cold</item>
+        <item>comfort</item>
+    </string-array>
+    <string-array name="condition">
+        <item>OR</item>
+        <item>AND</item>
+    </string-array>
+    <string-array name="ambient">
+        <item>dark</item>
+        <item>dim</item>
+        <item>bright</item>
+    </string-array>
+    <string-array name="blind">
+        <item>open</item>
+        <item>close</item>
+        <item>half</item>
+    </string-array>
+
+    <string name="title_activity_update_rule">UpdateRuleActivity</string>
+    <string name="title_activity_other_activity">Other_activity</string>
+    <string name="title_activity_history">History</string>
 
 </resources>

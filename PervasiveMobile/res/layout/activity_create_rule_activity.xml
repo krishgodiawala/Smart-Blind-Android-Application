@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.rit.csci759.pervasivemobile.Create_rule_activity"
+    android:orientation="vertical" 
+     android:background="@color/grey">>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature"
+        android:textSize="22sp"  
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:background="@drawable/selectable_background_bfb"
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/temperature" />
+     <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:text="Condition"
+        android:textSize="22sp"  
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+
+     <Spinner
+          android:background="@drawable/selectable_background_bfb"
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/condition"/>
+      <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+      <TextView
+        android:id="@+id/textView3"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:text="Light"
+        android:textSize="22sp"  
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+      <Spinner
+           android:background="@drawable/selectable_background_bfb"
+        android:id="@+id/spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/ambient"/>
+       <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+       <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blind position"
+        android:textSize="22sp"  
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+       <Spinner
+            android:background="@drawable/selectable_background_bfb"
+        android:id="@+id/spinner4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/blind"/>
+        <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+       
+        <Button
+          
+             android:id="@+id/createButton"
+        style="?android:attr/actionButtonStyle"
+        android:background="@drawable/roundcorners"
+      
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Create Rule" />
+       
+    
+</LinearLayout>

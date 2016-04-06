@@ -1,9 +1,6 @@
 package edu.rit.csci759.rspi;
-
-
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
-
 import edu.rit.csci759.rspi.utils.MCP3008ADCReader;
 
 public class RpiSensorViaMCP3008 {

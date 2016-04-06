@@ -2,6 +2,8 @@ package edu.rit.csci759.pervasivemobile.logic;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.util.Log;
 
@@ -61,5 +63,69 @@ public class JSONHandler {
 	
 		return response.getResult().toString();
 	}
+
+	public static String testJSONRequest(String server_URL_text, String input,String method){
+		// Creating a new session to a JSON-RPC 2.0 web service at a specified URL
+
+		Log.d("Debug serverURL", server_URL_text);
+		
+		// The JSON-RPC 2.0 server URL
+		URL serverURL = null;
+
+		try {
+			serverURL = new URL("http://"+server_URL_text);
+
+		} catch (MalformedURLException e) {
+		// handle exception...
+		}
+
+		// Create new JSON-RPC 2.0 client session
+		JSONRPC2Session mySession = new JSONRPC2Session(serverURL);
+
+
+		// Once the client session object is created, you can use to send a series
+		// of JSON-RPC 2.0 requests and notifications to it.
+
+		// Sending an example "getTime" request:
+		// Construct new request
+
+		int requestID = 0;
+		Map <String,Object> input1=new HashMap<String,Object>();
+	   if(method.equalsIgnoreCase("addRule")) {
+		   String values[]=input.split(" ");
+		   input1.put("temperature", values[0]);
+		   input1.put("condition", values[1]);
+		   input1.put("ambient", values[2]);
+		   input1.put("blind", values[3]);
+		   
+	   }else{
+		
+		input1.put("name", input);
+	   }
+		JSONRPC2Request request = new JSONRPC2Request(method, input1,requestID);
+
+		// Send request
+		JSONRPC2Response response = null;
+
+		try {
+			response = mySession.send(request);
+
+		} catch (JSONRPC2SessionException e) {
+
+		Log.e("error", e.getMessage().toString());
+		// handle exception...
+		}
+
+		// Print response result / error
+		if (response.indicatesSuccess())
+			Log.d("debug", response.getResult().toString());
+		else
+			Log.e("error", response.getError().getMessage().toString());
+		
+	
+		return response.getResult().toString();
+	}
+	
+	
 	
 }

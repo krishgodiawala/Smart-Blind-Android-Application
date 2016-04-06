@@ -8,54 +8,77 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.rit.csci759.pervasivemobile.MainActivity" >
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_label_serverURL"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/et_serverURL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textUri"
-        android:text="@string/ui_et_serverURL_default" >
-
-        <requestFocus />
-    </EditText>
+    tools:context="edu.rit.csci759.pervasivemobile.MainActivity" 
+    android:background="@color/grey">
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ui_label_requestMethod"
+         android:textSize="32sp"     
+        android:text="Temperature"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
-        android:id="@+id/et_requestMethod"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textViewtemp"
+        android:layout_width="103dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="@string/ui_et_requestMethod_default" />
+         android:textSize="25sp"     
+        android:text="-----" />
+
+    
+     <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="96dp"
+         android:textSize="32sp"     
+        android:layout_height="wrap_content"
+        android:text="Light"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/tv_response"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewambi"
+        android:layout_width="102dp"
+         android:textSize="25sp"     
         android:layout_height="wrap_content"
-        android:layout_marginTop="10pt"
-        android:text="@string/ui_label_response_default"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="-----" />
 
-    <Button
-        android:id="@+id/btn_sendRequest"
+    
+     <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20pt"
-        android:text="@string/ui_btn_sendRequest" />
+         android:textSize="32sp"     
+        android:text="Blind position"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewblind"
+        android:layout_width="106dp"
+         android:textSize="25sp"     
+        android:layout_height="wrap_content"
+        android:text="-----" />
+
+    
+     <View 
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.1"
+        />
+    <Button
+        android:id="@+id/mainbutton"
+      android:layout_width="290dp"
+        android:background="@drawable/roundcorners"        
+        android:layout_height="wrap_content"
+        android:text="Personalize" />
 
 </LinearLayout>
